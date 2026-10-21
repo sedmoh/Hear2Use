@@ -1,0 +1,590 @@
+/* ============================================================
+   Hear2Use — styles.css
+   Mobile-first, WCAG AA / AAA, no frameworks.
+   All sizes in rem so user font scaling works.
+   ============================================================ */
+
+/* ── Custom properties ─────────────────────────────────────── */
+:root {
+  --bg:          #ffffff;
+  --surface:     #f0f0f0;
+  --border:      #767676;
+  --text:        #1a1a1a;
+  --text-muted:  #444444;
+  --accent:      #005fcc;
+  --accent-fg:   #ffffff;
+  --danger:      #b00000;
+  --danger-fg:   #ffffff;
+  --warning-bg:  #fff3cd;
+  --warning-fg:  #3d2c00;
+  --ok-bg:       #d4edda;
+  --ok-fg:       #0d3318;
+  --focus-ring:  3px solid #005fcc;
+  --radius:      6px;
+  --font-base:   1.25rem;  /* 20px minimum */
+  --touch-min:   4rem;     /* 64px minimum touch target */
+  --gap:         1rem;
+}
+
+/* High-contrast overrides (7:1 ratio) */
+body.high-contrast {
+  --bg:         #000000;
+  --surface:    #1a1a1a;
+  --border:     #ffffff;
+  --text:       #ffffff;
+  --text-muted: #dddddd;
+  --accent:     #66aaff;
+  --accent-fg:  #000000;
+  --danger:     #ff6666;
+  --danger-fg:  #000000;
+  --warning-bg: #3d2c00;
+  --warning-fg: #ffe68a;
+  --ok-bg:      #0d3318;
+  --ok-fg:      #a8f0c0;
+  --focus-ring: 3px solid #ffff00;
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* respect user preferences */
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  font-size: var(--font-base);
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+}
+
+/* ── Focus ─────────────────────────────────────────────────── */
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* ── Skip link ─────────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 0;
+  background: var(--accent);
+  color: var(--accent-fg);
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  z-index: 9999;
+  border-radius: 0 0 var(--radius) 0;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── Utility ───────────────────────────────────────────────── */
+[hidden] {
+  display: none !important;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── App header ────────────────────────────────────────────── */
+.app-header {
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+.app-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.app-tagline {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ── Tab navigation ────────────────────────────────────────── */
+.tab-nav {
+  display: flex;
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tab-btn {
+  flex: 1;
+  min-width: 4rem;
+  min-height: var(--touch-min);
+  padding: 0.5rem 0.25rem;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid transparent;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s;
+}
+.tab-btn:hover {
+  background: var(--bg);
+}
+.tab-btn.active,
+.tab-btn[aria-selected="true"] {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Status / error bars ───────────────────────────────────── */
+.status-bar {
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  min-height: 2.5rem;
+}
+.status-bar:empty {
+  min-height: 0;
+  padding: 0;
+}
+.error-bar {
+  background: var(--danger);
+  color: var(--danger-fg);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+}
+
+/* ── Repeat bar ────────────────────────────────────────────── */
+.repeat-bar {
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Main / sections ───────────────────────────────────────── */
+main {
+  padding: 1rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+.app-section {
+  display: none;
+}
+.app-section.active {
+  display: block;
+}
+.app-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+.section-intro {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+button,
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: var(--touch-min);
+  padding: 0.6rem 1.25rem;
+  font-size: var(--font-base);
+  font-weight: 700;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+}
+.btn-primary:hover {
+  filter: brightness(1.15);
+}
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+.btn-secondary:hover {
+  filter: brightness(0.9);
+}
+.btn-danger {
+  background: var(--danger);
+  color: var(--danger-fg);
+  border-color: var(--danger);
+}
+.btn-scan {
+  font-size: 1.4rem;
+  padding: 1rem;
+  min-height: 5rem;
+}
+
+/* ── Hint text ─────────────────────────────────────────────── */
+.hint-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* ── Loading block ─────────────────────────────────────────── */
+.loading-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Live camera ───────────────────────────────────────────── */
+.camera-video {
+  display: block;
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+  background: #000;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+}
+.btn-shutter {
+  min-height: calc(var(--touch-min) * 1.5);
+  font-size: 1.5rem;
+}
+
+/* ── Result card ───────────────────────────────────────────── */
+.result-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.result-name {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.result-summary {
+  margin-bottom: 0.75rem;
+}
+.result-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+}
+.result-details dt {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ── Kitchen ───────────────────────────────────────────────── */
+.kitchen-actions {
+  margin-bottom: 1rem;
+}
+.impact-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+.impact-block h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.impact-stats {
+  display: flex;
+  gap: 2rem;
+}
+.impact-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.impact-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+.impact-label {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+.kitchen-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.kitchen-item {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.kitchen-item.expiring-soon {
+  border-color: var(--warning-fg);
+  background: var(--warning-bg);
+  color: var(--warning-fg);
+}
+.kitchen-item.expired {
+  border-color: var(--danger);
+}
+.kitchen-item-info {
+  flex: 1;
+}
+.kitchen-item-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.kitchen-item-date {
+  font-size: 0.9rem;
+}
+.kitchen-item-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  margin-top: 0.25rem;
+}
+.badge-expired {
+  background: var(--danger);
+  color: var(--danger-fg);
+}
+.badge-soon {
+  background: var(--warning-fg);
+  color: var(--warning-bg);
+}
+.badge-ok {
+  background: var(--ok-bg);
+  color: var(--ok-fg);
+}
+.btn-delete {
+  min-height: var(--touch-min);
+  min-width: var(--touch-min);
+  width: auto;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  background: var(--danger);
+  color: var(--danger-fg);
+  border: none;
+  border-radius: var(--radius);
+  margin: 0;
+  flex-shrink: 0;
+}
+.empty-message {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+/* ── Places ────────────────────────────────────────────────── */
+.places-actions {
+  margin-bottom: 1rem;
+}
+.tour-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.tour-controls button {
+  flex: 1;
+  min-width: 7rem;
+  margin: 0;
+  font-size: 1rem;
+  min-height: var(--touch-min);
+}
+.places-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.place-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+}
+.place-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.place-name {
+  font-weight: 700;
+}
+.place-badge {
+  font-size: 0.8rem;
+  background: var(--ok-bg);
+  color: var(--ok-fg);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.place-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ── Settings ──────────────────────────────────────────────── */
+.settings-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.settings-group h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  margin-top: 0.75rem;
+}
+label:first-of-type {
+  margin-top: 0;
+}
+input[type="password"],
+input[type="number"],
+input[type="text"],
+select {
+  display: block;
+  width: 100%;
+  min-height: var(--touch-min);
+  padding: 0.5rem 0.75rem;
+  font-size: var(--font-base);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+input[type="number"] {
+  max-width: 6rem;
+}
+.inline-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+.toggle-label {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.toggle-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+input[type="checkbox"][role="switch"] {
+  width: 3rem;
+  height: 1.75rem;
+  min-height: auto;
+  cursor: pointer;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+.settings-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.settings-actions button {
+  margin: 0;
+}
+
+/* ── Voice command button ──────────────────────────────────── */
+#btn-voice-cmd {
+  background: var(--surface);
+  border: 2px dashed var(--border);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* ── Responsive tweaks ─────────────────────────────────────── */
+@media (min-width: 480px) {
+  .result-actions {
+    flex-direction: row;
+  }
+  .result-actions button {
+    width: auto;
+    flex: 1;
+  }
+}

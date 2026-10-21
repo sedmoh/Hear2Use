@@ -1,0 +1,21 @@
+{
+  "name": "hear2use",
+  "version": "1.0.0",
+  "description": "> **A voice-first web app helping blind and partially sighted students live independently.** > Point at a label, hear what it says and what to do with it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve .",
+    "start:phone": "serve . --ssl-cert certs/cert.pem --ssl-key certs/key.pem"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  },
+  "overrides": {
+    "compression": "^1.8.2"
+  }
+}

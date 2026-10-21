@@ -1,0 +1,137 @@
+[
+  {
+    "id": "p1",
+    "name": "Green Street Grocers",
+    "category": "grocery",
+    "independent": true,
+    "shortDescription": "Family-run fruit, veg and general grocery shop. Fresh produce delivered daily.",
+    "approxWalkMinutes": 4,
+    "accessibilityNotes": "Step-free entrance. Staff are very helpful and will read labels on request."
+  },
+  {
+    "id": "p2",
+    "name": "Tesco Express",
+    "category": "grocery",
+    "independent": false,
+    "shortDescription": "Convenience supermarket. Good range of ready meals, dairy, and household basics.",
+    "approxWalkMinutes": 7,
+    "accessibilityNotes": "Step-free. Automatic doors. Accessible checkout available."
+  },
+  {
+    "id": "p3",
+    "name": "The Corner Café",
+    "category": "cafe",
+    "independent": true,
+    "shortDescription": "Cosy independent café serving hot drinks, toasties and cakes. Student-friendly prices.",
+    "approxWalkMinutes": 5,
+    "accessibilityNotes": "One small step at entrance. Staff are willing to assist."
+  },
+  {
+    "id": "p4",
+    "name": "Campus Health Centre",
+    "category": "campus service",
+    "independent": false,
+    "shortDescription": "University GP and nurse service. Register as a student patient when you arrive.",
+    "approxWalkMinutes": 8,
+    "accessibilityNotes": "Fully step-free. Hearing loop available at reception."
+  },
+  {
+    "id": "p5",
+    "name": "Boots Pharmacy",
+    "category": "pharmacy",
+    "independent": false,
+    "shortDescription": "Large pharmacy stocking prescriptions, vitamins, toiletries and over-the-counter medicines.",
+    "approxWalkMinutes": 10,
+    "accessibilityNotes": "Step-free. Staff can advise on accessible packaging. Large-print labels available on request."
+  },
+  {
+    "id": "p6",
+    "name": "Wash & Go Launderette",
+    "category": "launderette",
+    "independent": true,
+    "shortDescription": "Coin- and card-operated washing machines and tumble dryers. Open 7am–10pm daily.",
+    "approxWalkMinutes": 6,
+    "accessibilityNotes": "Wide aisles. Controls have tactile buttons. Staff on site until 6pm."
+  },
+  {
+    "id": "p7",
+    "name": "Hackney Council Recycling Point",
+    "category": "bin/recycling point",
+    "independent": false,
+    "shortDescription": "Street-level recycling banks for glass, clothing, small electricals and batteries.",
+    "approxWalkMinutes": 3,
+    "accessibilityNotes": "Pavement-level access. Slots are at reachable height. No staff on site."
+  },
+  {
+    "id": "p8",
+    "name": "Spice Route Kitchen",
+    "category": "cafe",
+    "independent": true,
+    "shortDescription": "Independent South Asian street-food café. Halal options. Popular with students.",
+    "approxWalkMinutes": 9,
+    "accessibilityNotes": "Step-free entrance. Helpful staff. Menu available in large print on request."
+  },
+  {
+    "id": "p9",
+    "name": "Student Union Shop",
+    "category": "campus service",
+    "independent": false,
+    "shortDescription": "On-campus shop selling stationery, snacks, phone chargers and university merchandise.",
+    "approxWalkMinutes": 2,
+    "accessibilityNotes": "Fully step-free inside the Student Union building. Accessible entrance on the east side."
+  },
+  {
+    "id": "p10",
+    "name": "Rainbow Deli",
+    "category": "grocery",
+    "independent": true,
+    "shortDescription": "Independent deli selling international foods, fresh bread, cheeses and a good range of vegan products.",
+    "approxWalkMinutes": 11,
+    "accessibilityNotes": "Step-free. Narrow aisles in parts; staff will assist."
+  },
+  {
+    "id": "p11",
+    "name": "City Pharmacy",
+    "category": "pharmacy",
+    "independent": true,
+    "shortDescription": "Independent pharmacist. Free prescription delivery to halls. Knowledgeable, friendly staff.",
+    "approxWalkMinutes": 13,
+    "accessibilityNotes": "One step at entrance. Staff are happy to come outside to assist."
+  },
+  {
+    "id": "p12",
+    "name": "Campus Library",
+    "category": "campus service",
+    "independent": false,
+    "shortDescription": "Main university library. Quiet study spaces, PC access, and a disability support desk.",
+    "approxWalkMinutes": 5,
+    "accessibilityNotes": "Fully step-free. Screen readers and magnification software on all PCs. Disability support desk on ground floor."
+  },
+  {
+    "id": "p13",
+    "name": "Green Bins Café & Swap Shop",
+    "category": "bin/recycling point",
+    "independent": true,
+    "shortDescription": "Community-run swap shop and café. Bring items you no longer need; take what you can use. Free coffee with any donation.",
+    "approxWalkMinutes": 14,
+    "accessibilityNotes": "Step-free. Volunteers available to assist. Quiet sessions on Tuesday mornings."
+  },
+  {
+    "id": "p14",
+    "name": "Starbucks",
+    "category": "cafe",
+    "independent": false,
+    "shortDescription": "Chain coffee shop. Reliable Wi-Fi, wide range of hot and cold drinks.",
+    "approxWalkMinutes": 6,
+    "accessibilityNotes": "Step-free. Staff trained in accessibility support."
+  },
+  {
+    "id": "p15",
+    "name": "Campus Disability & Inclusion Office",
+    "category": "campus service",
+    "independent": false,
+    "shortDescription": "University support service for students with disabilities. Apply for Disabled Students Allowance here.",
+    "approxWalkMinutes": 7,
+    "accessibilityNotes": "Ground floor, step-free. Hearing loop. Private meeting rooms available."
+  }
+]
