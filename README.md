@@ -2,7 +2,8 @@
 
 > **A voice-first web app helping blind and partially sighted students live independently.**
 > Point at a label, hear what it says and what to do with it.
-> Project Made by: fariahxkhan, hayden-manu, JohannsSatheesh, vanesa-eliza, wasulajesse and sedmoh
+
+Project Made by: fariahxkhan, hayden-manu, JohannsSatheesh, vanesa-eliza, wasulajesse and sedmoh
 
 ---
 
